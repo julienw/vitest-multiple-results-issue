@@ -1,8 +1,16 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { webdriverio } from '@vitest/browser-webdriverio';
 
 export default defineConfig({
-  root: '.',
-  build: {
-    outDir: 'dist',
+  plugins: [react()],
+  test: {
+    browser: {
+      enabled: true,
+      provider: webdriverio(),
+      instances: [
+        { browser: 'firefox' }
+      ],
+    },
   },
 });
