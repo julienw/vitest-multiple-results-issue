@@ -1,37 +1,29 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 function App() {
-  const dialog1Ref = useRef(null);
-  const dialog2Ref = useRef(null);
+  const [_, setLogGeneration] = useState(0);
+  const logs = useRef([]);
 
-  const openDialog1 = () => {
-    dialog1Ref.current?.showModal();
+  const onClickFirst = () => {
+    logs.current.push("click first");
+    setLogGeneration((a) => a + 1);
   };
-
-  const openDialog2 = () => {
-    dialog2Ref.current?.showModal();
+  const onClickSecond = () => {
+    logs.current.push("click second");
+    setLogGeneration((a) => a + 1);
   };
-
   return (
     <>
-      <button onClick={openDialog1}>Open Dialog 1</button>
-      <button onClick={openDialog2}>Open Dialog 2</button>
-
-      <dialog ref={dialog1Ref}>
-        <form method="dialog">
-          <label htmlFor="input-1">Enter text:</label>
-          <input type="text" name="text-input" />
-          <button type="submit">OK</button>
-        </form>
-      </dialog>
-
-      <dialog ref={dialog2Ref}>
-        <form method="dialog">
-          <label htmlFor="input-2">Enter text:</label>
-          <input type="text" name="text-input" />
-          <button type="submit">OK</button>
-        </form>
-      </dialog>
+      <button onClick={onClickFirst}>Click me 1</button>
+      <button onClick={onClickSecond}>Click me 2</button>
+      <pre>
+        {logs.current.map((log) => (
+          <>
+            {log}
+            <br />
+          </>
+        ))}
+      </pre>
     </>
   );
 }
