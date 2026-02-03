@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Input Issue Demo</title>
+</head>
+<body>
+  <button id="open-dialog-1">Open Dialog 1</button>
+  <button id="open-dialog-2">Open Dialog 2</button>
+
+  <dialog id="dialog-1">
+    <form method="dialog">
+      <label for="input-1">Enter text:</label>
+      <input type="text" id="input-1" name="text-input" />
+      <button type="submit">OK</button>
+    </form>
+  </dialog>
+
+  <dialog id="dialog-2">
+    <form method="dialog">
+      <label for="input-2">Enter text:</label>
+      <input type="text" id="input-2" name="text-input" />
+      <button type="submit">OK</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
