@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 function App() {
   const dialog1Ref = useRef(null);
@@ -20,7 +20,7 @@ function App() {
       <dialog ref={dialog1Ref}>
         <form method="dialog">
           <label htmlFor="input-1">Enter text:</label>
-          <input type="text" id="input-1" name="text-input" />
+          <input type="text" name="text-input" />
           <button type="submit">OK</button>
         </form>
       </dialog>
@@ -28,7 +28,7 @@ function App() {
       <dialog ref={dialog2Ref}>
         <form method="dialog">
           <label htmlFor="input-2">Enter text:</label>
-          <input type="text" id="input-2" name="text-input" />
+          <input type="text" name="text-input" />
           <button type="submit">OK</button>
         </form>
       </dialog>
